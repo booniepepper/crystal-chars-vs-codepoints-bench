@@ -1,0 +1,13 @@
+name: hamming
+version: 0.1.0
+
+authors:
+  - ♪ hiljusti 🎮 <hiljusti@amazon.com>
+
+targets:
+  hamming:
+    main: src/hamming.cr
+
+crystal: 0.34.0
+
+license: MIT
