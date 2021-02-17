@@ -7,9 +7,10 @@ authors:
 targets:
   hamming:
     main: src/hamming.cr
-  testdata:
-    main: src/testdata.cr
+  gen-input:
+    main: src/gen_input.cr
 
 crystal: 0.34.0
 
-license: MIT
+license: WTFPL
+
