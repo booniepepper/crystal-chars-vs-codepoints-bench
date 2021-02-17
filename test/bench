@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+test="$(dirname "$0")"
+cd $test
+
+bin="../bin"
+
+if ! command -v hyperfine >> /dev/null ; then
+  echo "This test needs hyperfine installed!"
+  echo "See: https://github.com/sharkdp/hyperfine"
+  exit 1
+fi
+
+if [[ -e a.txt && -e b.txt ]]; then
+  echo "Reusing existing a.txt and b.txt. Use rm if you want to regenerate them"
+else
+  $bin/gen-input
+fi
+
+hyperfine --warmup 1 --min-runs 50 "$bin/hamming --chars" "$bin/hamming --codepoints"
+

@@ -1,9 +1,12 @@
 require "option_parser"
 
-codepoints = false
+codepoints = nil
 
 OptionParser.parse do |parser|
-  parser.on "-c", "--codepoints", "Use codepoints instead of chars" do
+  parser.on "-c", "--chars", "Use chars" do
+    codepoints = false
+  end
+  parser.on "-C", "--codepoints", "Use codepoints" do
     codepoints = true
   end
 end
