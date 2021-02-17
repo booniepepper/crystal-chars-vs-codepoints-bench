@@ -7,6 +7,8 @@ authors:
 targets:
   hamming:
     main: src/hamming.cr
+  testdata:
+    main: src/testdata.cr
 
 crystal: 0.34.0
 
